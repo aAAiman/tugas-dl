@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Tugas 4: Mengenal Object (Image Classification)</h2>
+
+<form method="post" enctype="multipart/form-data" style="max-width:400px; margin:auto;">
+    <label><strong>Pilih gambar:</strong></label><br>
+    <input type="file" name="image" accept="image/*" style="margin:10px 0;">
+    <br>
+    <button type="submit">Klasifikasikan</button>
+</form>
+
+{% if filename %}
+<div style="margin-top:20px;">
+    <p>Gambar yang di-upload:</p>
+    <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" 
+         alt="Uploaded image" 
+         style="max-width:300px; border:1px solid #555;">
+</div>
+{% endif %}
+
+{% if predicted_label %}
+<div style="margin-top:20px;">
+    <strong>Prediksi Objek:</strong>
+    <p>{{ predicted_label }}</p>
+</div>
+{% endif %}
+
+{% endblock %}

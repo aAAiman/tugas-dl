@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header {
+    background: #355caa;     /* biru */
+    color: white;
+    padding: 10px 20px;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 25%;
+    background: #d8e5ff;     /* biru muda */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #003366;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    width: 75%;
+    padding: 20px;
+    background: #d9f0c8;     /* hijau muda */
+    box-sizing: border-box;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 6px 8px;
+    margin-top: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border: none;
+    background: #355caa;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #bbb;
+}

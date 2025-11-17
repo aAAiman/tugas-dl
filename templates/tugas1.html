@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Tugas 1: Kalkulator Operator Logika</h2>
+
+<form method="post">
+    <label>A (0 atau 1):</label><br>
+    <input type="number" name="a" value="{{ a }}"><br><br>
+
+    <label>B (0 atau 1):</label><br>
+    <input type="number" name="b" value="{{ b }}"><br><br>
+
+    <label>Operator:</label><br>
+    <select name="operator">
+        <option value="AND">AND</option>
+        <option value="OR">OR</option>
+        <option value="XOR">XOR</option>
+        <option value="NOT">NOT (A saja)</option>
+    </select>
+    <br><br>
+
+    <button type="submit">Hitung</button>
+</form>
+
+{% if result is not none %}
+<h3>Hasil: {{ result }}</h3>
+{% endif %}
+{% endblock %}

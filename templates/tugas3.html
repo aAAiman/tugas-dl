@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Tugas 3: Prediksi Harga Saham</h2>
+
+<form method="post" style="max-width: 400px; margin: auto; text-align: left;">
+
+    <label><strong>Kode Saham:</strong></label><br>
+    <input type="text" 
+           name="stock_code" 
+           value="{{ stock_code }}" 
+           placeholder="Contoh: BBCA" 
+           style="width: 100%; padding: 8px; margin-bottom: 15px;">
+    <br>
+
+    <label><strong>Jumlah hari ke depan:</strong></label><br>
+    <input type="number" 
+           name="n_days" 
+           min="1" 
+           value="{{ n_days or 1 }}" 
+           style="width: 100%; padding: 8px; margin-bottom: 20px;">
+    <br>
+
+    <button type="submit" 
+            style="padding: 8px 15px; cursor:pointer;">
+        Prediksi
+    </button>
+</form>
+
+{% if prediction_result %}
+    <div style="max-width: 400px; margin: 25px auto; text-align: left;">
+        <h3>Hasil Prediksi:</h3>
+
+        {% if prediction_result == ["Data saham tidak ditemukan"] %}
+            <p style="color: red;">Kode saham tidak ditemukan.</p>
+        {% else %}
+            <ul>
+                {% for h in prediction_result %}
+                    <li>Hari ke-{{ loop.index }} : {{ h }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% endblock %}

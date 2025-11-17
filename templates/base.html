@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- RESPONSIVE -->
+    <title>Tugas Deep Learning</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e9eace; /* hijau muda */
+        }
+
+        header {
+            background-color: #d82694ff;
+            color: white;
+            text-align: center;
+            padding: 15px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+
+        .container {
+            display: flex;
+            min-height: 90vh;
+        }
+
+        aside {
+            background-color: #dfe7f2;
+            width: 230px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        aside h3 {
+            margin-top: 0;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        aside ul li {
+            margin: 12px 0;
+        }
+
+        aside a {
+            color: #d82694ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        aside a:hover {
+            color: #3366cc;
+        }
+
+        main {
+            flex: 1;
+            background-color: #e1c5e3;
+            padding: 40px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        main h2 {
+            color: #d82694ff;
+            text-decoration: underline;
+        }
+
+        /* ================================
+           RESPONSIVE DESIGN
+        ================================= */
+
+        @media (max-width: 768px) {
+            /* Layout jadi vertikal */
+            .container {
+                flex-direction: column;
+            }
+
+            /* Sidebar full width */
+            aside {
+                width: 100%;
+                text-align: center;
+            }
+
+            aside ul li {
+                margin: 15px 0;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 18px;
+            }
+
+            header p {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 16px;
+            }
+
+            aside {
+                padding: 15px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tugas Mata Kuliah Deep Learning</h1>
+        <p><strong>Nama:</strong>  Malika Amiliana Devira</p>
+        <p><strong>NPM:</strong> 50422850</p>
+        <p><strong>Kelas:</strong> 4IA03</p>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h3><a href="{{ url_for('index') }}">Home</a></h3>
+            <h3>Daftar Tugas:</h3>
+            <ul>
+                <li><a href="{{ url_for('tugas1') }}">1. Kalkulator Operator Logika</a></li>
+                <li><a href="{{ url_for('tugas2') }}">2. Prediksi Kata dengan Bidirectional</a></li>
+                <li><a href="{{ url_for('tugas3') }}">3. Prediksi Harga Saham</a></li>
+                <li><a href="{{ url_for('tugas4') }}">4. Mengenal Objek (Image Classification)</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

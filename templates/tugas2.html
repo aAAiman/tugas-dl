@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Tugas 2: Prediksi Kata dengan Bidirectional</h2>
+
+<form method="post" style="max-width: 500px; margin: auto;">
+    <label>Masukkan kalimat:</label><br>
+    <input type="text" name="input_text" 
+           value="{{ input_text }}"
+           placeholder="contoh: saya suka"
+           style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #666;">
+    <br><br>
+
+    <button type="submit" style="padding: 10px 20px; cursor:pointer;">Prediksi</button>
+</form>
+
+{% if prediction %}
+    <h3>Hasil Prediksi:</h3>
+    <p style="font-size: 20px; font-weight: bold;">{{ prediction }}</p>
+{% endif %}
+{% endblock %}
